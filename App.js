@@ -1,26 +1,11 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import Table from "./Table";
 import Form from "./form";
 
-const App = () => {
-  const [characters, setCharacters] = useState([
-    {
-      name: "Mike",
-      task: "Day Dream"
-    },
-    {
-      name: "Kell",
-      task: "Dilly Dally"
-    },
-    {
-      name: "Careem",
-      task: "Lay About"
-    },
-    {
-      name: "Yanis",
-      task: "Chill Like A Villan"
-    }
-  ]);
+const App = props => {
+  const [characters, setCharacters] = useState(
+      props.data
+  );
   const removeCharacter = index => {
     setCharacters(
       characters.filter((character, i) => {
